@@ -1,0 +1,33 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(code \"C:\\\\Users\\\\justi\\\\MatchaHouse\")",
+      "Bash(dir:*)",
+      "Bash(git init:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git remote add:*)",
+      "Bash(git push:*)",
+      "Bash(powershell -ExecutionPolicy ByPass -c \"irm https://astral.sh/uv/install.ps1 | iex\")",
+      "Bash(C:Usersjusti.localbinuvx --version)",
+      "Bash(\"/c/Users/justi/.local/bin/uvx\" --version)",
+      "Bash(uvx:*)",
+      "Bash(py --version)",
+      "Bash(winget install:*)",
+      "Bash(if not exist \"C:\\\\Users\\\\justi\\\\MatchaHouse\\\\assets\" mkdir \"C:\\\\Users\\\\justi\\\\MatchaHouse\\\\assets\")",
+      "mcp__nanobanana__generate_image",
+      "Bash(start \"\" \"C:\\\\Users\\\\justi\\\\MatchaHouse\\\\index.html\")",
+      "Bash(echo:*)",
+      "Bash(test:*)",
+      "Bash(wc:*)",
+      "Bash(git lfs:*)",
+      "Bash(netlify:*)",
+      "Bash(npm install:*)",
+      "WebFetch(domain:matchahouse-site.netlify.app)"
+    ]
+  },
+  "enableAllProjectMcpServers": true,
+  "enabledMcpjsonServers": [
+    "nanobanana"
+  ]
+}

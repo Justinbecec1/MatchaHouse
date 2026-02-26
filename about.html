@@ -23,6 +23,9 @@
                 <span></span>
                 <span></span>
             </div>
+            <button class="theme-toggle" id="themeToggle" title="Toggle dark mode">
+                <span class="toggle-icon">🌙</span>
+            </button>
         </div>
     </nav>
 
@@ -181,6 +184,52 @@
         function toggleMenu() {
             document.querySelector('.nav-links').classList.toggle('active');
         }
+
+        function updateThemeIcon() {
+            const html = document.documentElement;
+            const themeToggle = document.getElementById('themeToggle');
+            const toggleIcon = themeToggle.querySelector('.toggle-icon');
+
+            // Set icon based on current mode
+            if (html.classList.contains('dark-mode')) {
+                toggleIcon.textContent = '☀️';
+            } else {
+                toggleIcon.textContent = '🌙';
+            }
+        }
+
+        function toggleTheme() {
+            const html = document.documentElement;
+            html.classList.toggle('dark-mode');
+            updateThemeIcon();
+            
+            // Save preference to localStorage
+            const isDarkMode = html.classList.contains('dark-mode');
+            localStorage.setItem('themePreference', isDarkMode ? 'dark' : 'light');
+        }
+
+        function loadThemePreference() {
+            const savedTheme = localStorage.getItem('themePreference');
+            const html = document.documentElement;
+            
+            if (savedTheme === 'dark') {
+                html.classList.add('dark-mode');
+            } else {
+                html.classList.remove('dark-mode');
+            }
+        }
+
+        // Load saved theme on page load
+        loadThemePreference();
+
+        // Add click listener to theme toggle button and set initial icon
+        document.addEventListener('DOMContentLoaded', function() {
+            const themeToggle = document.getElementById('themeToggle');
+            if (themeToggle) {
+                updateThemeIcon(); // Set icon based on current mode on page load
+                themeToggle.addEventListener('click', toggleTheme);
+            }
+        });
     </script>
 </body>
 </html>
